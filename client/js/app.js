@@ -1,2 +1,3 @@
-require("../css/style.css");
-document.write(require('./content.js'));
+require("../css/style.scss");
+TestView = require('views/test_view');
+new TestView().render();

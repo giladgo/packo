@@ -4,8 +4,12 @@ app = express();
 
 app.use(express.static('build'));
 
-// TODO: User render() instead
-app.use(express.static('server/templates/'));
+app.set('views', './server/templates');
+app.set('view engine', 'jade');
+
+app.get('/', function(req, res) {
+    res.render('index')
+})
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
